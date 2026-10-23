@@ -2,6 +2,15 @@
 
 本仓库的显著变更记录。格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循 [Semantic Versioning](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### 文档
+
+- README 补「安装与同步」（仓库为事实源、安装是快照拷贝、漂移自检）与「已验证」实测清单。
+- CHANGELOG 顶部补 Unreleased 段，避免改动只在提交信息里留痕。
+- 新增 `AGENTS.md`：agent 在本仓库的工作约定（先跑 `models` 核实事实、不硬编码 key、生成产物不入库）。
+- 开发记录：旧 `img-sensenova`（三江源专用版）已从 magpie library 删除，仅保留本仓库的通用 skill，消除双技能选择歧义。
+
 ## [0.1.0] - 2026-10-22
 
 首个可用版本。重构为通用 SenseNova 文生图 skill。

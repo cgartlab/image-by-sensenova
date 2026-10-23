@@ -54,6 +54,32 @@ echo -n "sk-xxxxxxxx" > ~/.config/sensenova/api_key
 
 获取 key：[platform.sensenova.cn](https://platform.sensenova.cn) 注册即用，无需绑卡；Token Plan 公测期免费（每 5 小时 1500 次）。
 
+## 安装与同步
+
+**唯一事实源是本仓库**（`git clone` 下来的这份）。放到 skills 路径后的那份是**快照拷贝**，不会随仓库自动更新：
+
+```bash
+# 安装（拷贝）
+cp -r image-by-sensenova ~/.config/magpie/library/skills/image-by-sensenova
+
+# 或做软链，让已安装 skill 永远等于仓库
+rm -rf ~/.config/magpie/library/skills/image-by-sensenova
+ln -s "$PWD/image-by-sensenova" ~/.config/magpie/library/skills/image-by-sensenova
+```
+
+改了仓库但没重装 → 已加载的 skill 仍是旧快照。判断是否漂移：
+
+```bash
+md5sum SKILL.md ~/.config/magpie/library/skills/image-by-sensenova/SKILL.md
+```
+
+## 已验证
+
+- `size-check`：8 个比例预设全部命中真实尺寸规则 ✅
+- `models`：`/v1/models` 返回两个图像模型（`sensenova-u1.5-lite`、`sensenova-6.8-flash-lite`）✅
+- `gen --size 1024x1024`：真实生成 961KB PNG，像素与请求一致，元数据完整（5471 tokens / 20.5s）✅
+- `u1-fast` / `1920x1080`：分别复现 404 / 400，验证错误路径 ✅
+
 ## 用法
 
 ```bash
