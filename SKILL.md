@@ -14,10 +14,10 @@ mutating: false
 license: CC-BY-NC-SA-4.0
 compatibility: 需 Python 3（纯标准库，无 pip 依赖）；可选环境变量 SENSENOVA_API_KEY 或 ~/.config/sensenova/api_key。
 metadata:
+  kind: skill
   version: "0.1.0"
   date: "2026-10-22"
-  reference: "https://github.com/cgartlab/image-by-sensenova"
----
+  reference: "https://github.com/cgartlab/image-by-sensenova"---
 
 # image-by-sensenova — SenseNova 文生图 Skill
 
